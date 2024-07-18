@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info:
+  title: MATLAB Microservice Test
+  version: 1.0.0
+paths:
+  /bondtools/simplebondprice:
+    post:
+      tags:
+        - default
+      summary: Call simplebondprice Matlab Function
+      requestBody: 
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nargout:
+                  type: integer
+                  format: int64
+                  example: 1
+                rhs:
+                  type: array
+                  items:
+                    type: integer
+                    format: int64
+                    example: 1
+                  minItems: 4
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  lhs: 
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        mwdata:
+                          type: array
+                          items:
+                            type: integer
+                            format: int64
+                        mwsize:
+                          type: array
+                          items:
+                            type: integer
+                            format: int64
+                        mytype:
+                          type: double
