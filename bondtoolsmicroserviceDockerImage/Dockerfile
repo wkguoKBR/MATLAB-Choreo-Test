@@ -3,7 +3,7 @@
 # Sample docker build command:
 # wsl docker build -f "Dockerfile" -t bondtools "."
 
-FROM matlabruntime/r2024a/release/update4/108000000000000000
+FROM wkguo/matlabruntime:latest
 
 COPY ./applicationFilesForMATLABCompiler /usr/bin/mlrtapp
 RUN chmod -R a+rX /usr/bin/mlrtapp/*
