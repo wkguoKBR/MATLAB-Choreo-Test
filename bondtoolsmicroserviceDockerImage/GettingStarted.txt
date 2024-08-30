@@ -26,7 +26,7 @@ To locally test the running microservice, we will use the curl command.
 The generic form of the curl command to post an HTTP request to the
 microservice is:
 
-curl -v -H Content-Type:application/json -d '<json-data>' http://<hostname>:<port>/<archivename>/<functionname>
+curl -v -H Content-Type:application/json -d '{"nargout":1,"rhs":[100,1,1,1}' http://localhost:9900/bondtools/simplebondprice
 
 Where:
 <json-data> is the input to the called function in json format
