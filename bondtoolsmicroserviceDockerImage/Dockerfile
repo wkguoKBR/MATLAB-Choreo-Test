@@ -10,6 +10,6 @@ COPY ./applicationFilesForMATLABCompiler /usr/bin/mlrtapp
 RUN chmod -R a+rX /usr/bin/mlrtapp/*
 
 RUN if ["$(getent passwd appuser | cut -d: -f1)" = ""] ; then useradd -ms /bin/bash appuser ; fi
-USER appuser
+USER 10001
 
 ENTRYPOINT ["/opt/matlabruntime/R2024a/bin/glnxa64/muserve", "-a", "/usr/bin/mlrtapp/bondtools.ctf"]
